@@ -3,18 +3,21 @@
 
 #include <string>
 #include <comedilib.h>
+#include <map>
 
 namespace comedi {
 
-        class ComediDevice {
+	class ComediDevice {
 	public:
 		ComediDevice(std::string deviceNode);
 		virtual ~ComediDevice();
 		
 		comedi_t* getDeviceHandle();
+		static ComediDevice* getDevice(std::string deviceNode);
 
         private:
 		comedi_t *it;
+		static std::map<std::string, comedi::ComediDevice *> devices;
 	};
 };
 

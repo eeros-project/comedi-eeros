@@ -25,4 +25,8 @@ endif()
 add_subdirectory(lib)
 add_subdirectory(test)
 
-INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/include/ComediDevice.hpp DESTINATION include)
+INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/include/ComediDevice.hpp 
+	${CMAKE_CURRENT_SOURCE_DIR}/include/DigIn.hpp
+	${CMAKE_CURRENT_SOURCE_DIR}/include/DigOut.hpp
+	${CMAKE_CURRENT_SOURCE_DIR}/include/AnalogIn.hpp
+DESTINATION include)
