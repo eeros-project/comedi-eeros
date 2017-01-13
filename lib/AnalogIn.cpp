@@ -2,8 +2,6 @@
 
 using namespace comedi;
 
-//TODO untested!!
-
 AnalogIn::AnalogIn(std::string id,
 					 void* libHandle,
 					 std::string device,
@@ -23,15 +21,16 @@ AnalogIn::AnalogIn(std::string id,
 double AnalogIn::get() {
 	lsampl_t data = 0;
 	comedi_data_read(deviceHandle, subDeviceNumber, channel, 0, AREF_GROUND, &data);
-	double inVal = static_cast<double>(data);
+	double inVal = (static_cast<double>(data) - offset) / scale;
+	
 	if(inVal > maxIn) inVal = maxIn;
 	if(inVal < minIn) inVal = minIn;
 	
-	return inVal / scale + offset;
+	return inVal;
 }
 
 extern "C"{
-	eeros::hal::ScalableInput<double> *createAnalgIn(std::string id, 
+	eeros::hal::ScalableInput<double> *createAnalogIn(std::string id, 
 							void* libHandle, 
 							std::string device, 
 							uint32_t subDeviceNumber, 
