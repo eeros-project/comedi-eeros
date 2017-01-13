@@ -1,6 +1,6 @@
 include_directories(../include/)
 
-set(COMEDIEEROS_SRCS ComediDevice.cpp DigIn.cpp DigOut.cpp AnalogIn.cpp)
+set(COMEDIEEROS_SRCS ComediDevice.cpp DigIn.cpp DigOut.cpp AnalogIn.cpp AnalogOut.cpp Fqd.cpp)
 
 add_library(comedieeros SHARED ${COMEDIEEROS_SRCS})
 add_library(comedieeros_static ${COMEDIEEROS_SRCS})

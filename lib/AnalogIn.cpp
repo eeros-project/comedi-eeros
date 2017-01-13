@@ -2,6 +2,8 @@
 
 using namespace comedi;
 
+//TODO untested!!
+
 AnalogIn::AnalogIn(std::string id,
 					 void* libHandle,
 					 std::string device,
@@ -22,12 +24,9 @@ double AnalogIn::get() {
 	lsampl_t data = 0;
 	comedi_data_read(deviceHandle, subDeviceNumber, channel, 0, AREF_GROUND, &data);
 	double inVal = static_cast<double>(data);
-	if(inVal > maxIn){
-		inVal = maxIn;
-	}
-	if(inVal < minIn){
-		inVal = minIn;
-	}
+	if(inVal > maxIn) inVal = maxIn;
+	if(inVal < minIn) inVal = minIn;
+	
 	return inVal / scale + offset;
 }
 
