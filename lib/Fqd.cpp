@@ -1,4 +1,5 @@
 #include <Fqd.hpp>
+#include <iostream>
 
 using namespace comedi;
 
@@ -50,7 +51,8 @@ void Fqd::init(unsigned int devInitValue){
 double Fqd::get() {
 	lsampl_t data = 0;
 	comedi_data_read(deviceHandle, subDeviceNumber, 0, 0, 0, &data);
-	return static_cast<double>(data) / scale + offset;
+	signed int sign = static_cast<signed int>(data);
+	return (static_cast<double>(sign)) / scale + offset;
 }
 
 void Fqd::reset() {	
