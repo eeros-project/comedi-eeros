@@ -24,7 +24,7 @@ double AnalogOut::get() {
 }
 
 void AnalogOut::set(double voltage) {
-	uint32_t value = static_cast<uint32_t>((voltage - offset)/scale);
+	int32_t value = static_cast<int32_t>((voltage - offset)/scale);
 	
 	if(value > maxOut) value = maxOut;
 	if(value < minOut) value = minOut;
