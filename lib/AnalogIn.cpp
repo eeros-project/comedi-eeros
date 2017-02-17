@@ -1,4 +1,4 @@
-#include <AnalogIn.hpp>
+#include "../include/AnalogIn.hpp"
 
 using namespace comedi;
 

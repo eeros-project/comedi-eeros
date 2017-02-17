@@ -1,4 +1,4 @@
-#include <AnalogOut.hpp>
+#include "../include/AnalogOut.hpp"
 
 using namespace comedi;
 
@@ -31,11 +31,6 @@ void AnalogOut::set(double voltage) {
 	
 	lsampl_t data = static_cast<lsampl_t>(value);
 	comedi_data_write(deviceHandle, subDeviceNumber, channel, 0, AREF_GROUND, data);
-
-// TODO old code below: remove after testing
-// 	if(value > maxVoltage) value = maxVoltage;
-// 	if(value < minVoltage) value = minVoltage;
-// 	lsampl_t data = static_cast<lsampl_t>(value * maxValue / (maxVoltage - minVoltage) + maxValue / 2.0);
 }
 
 extern "C"{

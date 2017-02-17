@@ -1,4 +1,4 @@
-#include <DigIn.hpp>
+#include "../include/DigIn.hpp"
 
 using namespace comedi;
 

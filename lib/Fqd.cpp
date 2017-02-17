@@ -1,4 +1,4 @@
-#include <Fqd.hpp>
+#include "../include/Fqd.hpp"
 #include <iostream>
 
 using namespace comedi;

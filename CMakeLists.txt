@@ -31,4 +31,4 @@ INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/include/ComediDevice.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/include/AnalogIn.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/include/AnalogOut.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/include/Fqd.hpp
-DESTINATION include)
+DESTINATION include/comedi-eeros)

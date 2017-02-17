@@ -1,4 +1,4 @@
-#include <ComediDevice.hpp>
+#include "../include/ComediDevice.hpp"
 #include <eeros/core/EEROSException.hpp>
 
 using namespace comedi;

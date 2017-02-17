@@ -5,7 +5,7 @@
 #include <limits>
 #include <comedilib.h>
 #include <eeros/hal/ScalableInput.hpp>
-#include <ComediDevice.hpp>
+#include "ComediDevice.hpp"
 
 namespace comedi {
 	class AnalogIn : public eeros::hal::ScalableInput<double> {

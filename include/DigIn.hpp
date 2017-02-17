@@ -4,7 +4,7 @@
 #include <string>
 #include <comedilib.h>
 #include <eeros/hal/Input.hpp>
-#include <ComediDevice.hpp>
+#include "ComediDevice.hpp"
 
 namespace comedi {
 	class DigIn : public eeros::hal::Input<bool> {

@@ -5,7 +5,7 @@
 #include <limits>
 #include <comedilib.h>
 #include <eeros/hal/ScalableOutput.hpp>
-#include <ComediDevice.hpp>
+#include "ComediDevice.hpp"
 
 namespace comedi {
 	class AnalogOut : public eeros::hal::ScalableOutput<double> {

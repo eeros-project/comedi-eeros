@@ -4,7 +4,7 @@
 #include <string>
 #include <comedilib.h>
 #include <eeros/hal/Output.hpp>
-#include <ComediDevice.hpp>
+#include "ComediDevice.hpp"
 
 namespace comedi {
 	class DigOut : public eeros::hal::Output<bool> {
