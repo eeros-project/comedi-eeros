@@ -1,5 +1,5 @@
 #include "../include/ComediDevice.hpp"
-#include <eeros/core/EEROSException.hpp>
+#include <eeros/core/Fault.hpp>
 
 using namespace comedi;
 
@@ -8,11 +8,11 @@ std::map<std::string, ComediDevice *> ComediDevice::devices;
 ComediDevice::ComediDevice(std::string deviceNode) {
 	auto devIt = devices.find(deviceNode);
 	if(devIt != devices.end()){
-		throw new eeros::EEROSException("device already open, claim already opened device via getDevice()");
+		throw new eeros::Fault("device already open, claim already opened device via getDevice()");
 	}
 	it = comedi_open(deviceNode.c_str());
 	if(!it) {
-		throw eeros::EEROSException("Can't open device \"" +  deviceNode + "\"!"); // TODO define error number and send error message to logger
+		throw eeros::Fault("Can't open device \"" +  deviceNode + "\"!"); // TODO define error number and send error message to logger
 	}
 	devices[deviceNode] = this;
 }
