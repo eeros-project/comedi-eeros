@@ -26,7 +26,7 @@ comedi_t* ComediDevice::getDeviceHandle() {
 	return it;
 } 
 
-ComediDevice* ComediDevice::getDevice(std::__cxx11::string deviceNode) {
+ComediDevice* ComediDevice::getDevice(std::string deviceNode) {
 	auto devIt = devices.find(deviceNode);
 	if(devIt != devices.end()){
 		return devIt->second;
