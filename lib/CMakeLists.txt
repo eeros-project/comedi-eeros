@@ -5,7 +5,11 @@ set(COMEDIEEROS_SRCS ComediDevice.cpp DigIn.cpp DigOut.cpp AnalogIn.cpp AnalogOu
 add_library(comedieeros SHARED ${COMEDIEEROS_SRCS})
 add_library(comedieeros_static ${COMEDIEEROS_SRCS})
 
+
 target_link_libraries(comedieeros comedi eeros)
+set_target_properties(comedieeros PROPERTIES VERSION ${LIBRARY_VERSION})
+
 target_link_libraries(comedieeros_static comedi eeros)
 
-INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/libcomedieeros.so ${CMAKE_CURRENT_BINARY_DIR}/libcomedieeros_static.a DESTINATION lib)
+INSTALL(TARGETS comedieeros comedieeros_static LIBRARY DESTINATION lib ARCHIVE DESTINATION lib)
+
